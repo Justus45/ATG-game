@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dg3cnol4qoqo1"]
+
+[ext_resource type="Script" uid="uid://cd6wuhy6cstoi" path="res://scripts/ui/HUD.gd" id="1_0mwgc"]
+[ext_resource type="Script" path="res://scripts/ui/WantedStars.gd" id="2_stars"]
+
+[node name="Hud" type="CanvasLayer" unique_id=2140252132]
+script = ExtResource("1_0mwgc")
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=545583416]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -511.0
+offset_top = 27.0
+offset_right = -193.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Paina E noustaksesi autoon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WantedStars" type="Control" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 54.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("2_stars")
+
+[node name="MessageLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 100.0
+offset_right = 400.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Viesti"
+horizontal_alignment = 1
+vertical_alignment = 1

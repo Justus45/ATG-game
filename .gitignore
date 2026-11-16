@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+*.exe
+*.console.exe
+*.pck
+export/
+_varmuuskopio/
+Claude outputs/

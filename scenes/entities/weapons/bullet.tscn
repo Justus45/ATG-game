@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/Bullet2D.gd" id="1_bullet"]
+[ext_resource type="Texture2D" path="res://assets/sprites/weapons/pistol.png" id="2_sheet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bullet"]
+atlas = ExtResource("2_sheet")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bullet"]
+radius = 1.5
+
+[node name="Bullet" type="Area2D"]
+z_index = 100
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_bullet")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_bullet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bullet")

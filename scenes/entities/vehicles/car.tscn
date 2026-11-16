@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://d2u54l8cfc7xu"]
+
+[ext_resource type="Script" uid="uid://c7i27bbw51jto" path="res://scripts/entities/Car2D.gd" id="1_g38u0"]
+[ext_resource type="Texture2D" uid="uid://cu7pb3icwbuty" path="res://assets/sprites/vehicles/car_down.png" id="2_kxegh"]
+[ext_resource type="Texture2D" uid="uid://cg1k4ki2ne68n" path="res://assets/sprites/vehicles/car_left.png" id="3_tpoi6"]
+[ext_resource type="Texture2D" uid="uid://cqf4ynbuxw2go" path="res://assets/sprites/vehicles/car_right.png" id="4_xtq7t"]
+[ext_resource type="Texture2D" uid="uid://bnofkwn0sv45i" path="res://assets/sprites/vehicles/car_up.png" id="5_2a7gb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2kfr"]
+atlas = ExtResource("2_kxegh")
+region = Rect2(0, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j61ss"]
+atlas = ExtResource("3_tpoi6")
+region = Rect2(0, 0, 23, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfrqp"]
+atlas = ExtResource("4_xtq7t")
+region = Rect2(0, 0, 23, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es37v"]
+atlas = ExtResource("5_2a7gb")
+region = Rect2(0, 0, 16, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rsxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2kfr")
+}],
+"loop": 1,
+"name": &"car_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j61ss")
+}],
+"loop": 1,
+"name": &"car_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfrqp")
+}],
+"loop": 1,
+"name": &"car_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es37v")
+}],
+"loop": 1,
+"name": &"car_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rsxb"]
+size = Vector2(21, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5rsxb"]
+radius = 18.0
+
+[node name="Car" type="CharacterBody2D" unique_id=947353033]
+script = ExtResource("1_g38u0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194011536]
+sprite_frames = SubResource("SpriteFrames_5rsxb")
+animation = &"car_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218828782]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_5rsxb")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=720682723]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=594748639]
+shape = SubResource("CircleShape2D_5rsxb")
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=1764406638]
+position = Vector2(0, -16)

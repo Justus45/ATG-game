@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/WeaponPickup.gd" id="1_pickup"]
+[ext_resource type="Texture2D" path="res://assets/sprites/weapons/pistol.png" id="2_sheet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pickup"]
+atlas = ExtResource("2_sheet")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 14.0
+
+[node name="WeaponPickup" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_pickup")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_pickup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pickup")
